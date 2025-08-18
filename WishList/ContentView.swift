@@ -33,6 +33,8 @@ struct ContentView: View {
                         }
                 }
             }//List
+            
+            //list modefiers :
             .navigationTitle("WishList")
             .toolbar{
                 ToolbarItem(placement: .topBarTrailing){
@@ -68,12 +70,12 @@ struct ContentView: View {
                     ContentUnavailableView("My WishList", systemImage: "heart.circle", description: Text("No wishes yet"))
                 }
             }
-        }
+        }//navigation stack
     }
 }
 
 extension ContentView {
-    /// ينشئ كونتينر In-Memory ويعبّيه بيانات تجريبية
+
     static func makePreviewContainer() -> ModelContainer {
         let config = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try! ModelContainer(for: Wish.self, configurations: config)
